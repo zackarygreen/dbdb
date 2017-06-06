@@ -22,7 +22,7 @@ input[type=text]:focus {
   width: 100%;
 }
 
-body {
+body { 
   font-size: 20px;
   font-family: "Abel", sans-serif
 }
