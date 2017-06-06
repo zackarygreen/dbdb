@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<title>DBDB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Abel">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body ng-app="dbdb">
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="index.js"></script>
+
+
+	<!-- Sidebar/menu -->
+	<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+		style="z-index: 3; width: 300px; font-weight: bold;" id="mySidebar">
+		<br> <a href="javascript:void(0)" onclick="w3_close()"
+			class="w3-button w3-hide-large w3-display-topleft"
+			style="width: 100%; font-size: 22px">Close Menu</a>
+		<div class="w3-container">
+			<img src="http://ktdata.net/wp-content/uploads/2016/06/DB2.png"
+				style="width: 100%" onclick="onClick(this)" alt="dblogo">
+			<h3>
+				<b>Double Burst <br />Database
+				</b>
+			</h3>
+		</div>
+		<div class="w3-bar-block">
+			<a href="index.html" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-hover-white">Home</a> <a
+				href="search.html" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-hover-white">Search</a> <a
+				href="buildteam.html" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-hover-white">Build a Team</a> <a
+				href="collection.html" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-hover-white">My Collection</a> <a
+				href="#about" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-hover-white">About Us</a> <a
+				href="#contact" onclick="w3_close()"
+				class="w3-bar-item w3-button w3-hover-white">Contact</a>
+		</div>
+	</nav>
+
+	<!-- Top menu on small screens -->
+	<header
+		class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+		<a href="javascript:void(0)" class="w3-button w3-red w3-margin-right"
+			onclick="w3_open()">☰</a> <span>Double Burst Database</span>
+	</header>
+
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large" onclick="w3_close()"
+		style="cursor: pointer" title="close side menu" id="myOverlay"></div>
+
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+
+		<!-- Header -->
+		<div class="w3-container" style="margin-top: 80px" id="search">
+			<h1 class="w3-jumbo">
+				<b>Double Burst Database</b>
+			</h1>
+			<h1 class="w3-xxxlarge w3-text-red">
+				<b>search.</b>
+			</h1>
+			<hr style="width: 50px; border: 5px solid red" class="w3-round">
+		</div>
+
+		<!-- Search Bar -->
+		<div class="w3-row-padding" ng-controller="searchController as sc">
+			<input type="text" name="search" placeholder="Search..">
+			<div>
+				<a href="#advanced" onclick="">Advanced Search</a>
+			</div>
+			<div ng-repeat="person in sc.people">
+				<h1 ng-if="person.name == 'Zack'">Hello {{person.name}}....You are {{person.age}} years old</h1>
+			</div>
+		</div>
+		<!-- buildteam -->
+		<div class="w3-container" id="buildteam" style="margin-top: 75px">
+			<h1 class="w3-xxxlarge w3-text-red">
+				<b>buildteam.</b>
+			</h1>
+			<hr style="width: 50px; border: 5px solid red" class="w3-round">
+			<p>Build your own team!</p>
+			<p>Some text about our buildteam</p>
+		</div>
+
+		<!-- collection -->
+		<div class="w3-container" id="collection" style="margin-top: 75px">
+			<h1 class="w3-xxxlarge w3-text-red">
+				<b>collection.</b>
+			</h1>
+			<hr style="width: 50px; border: 5px solid red" class="w3-round">
+			<p>Track your collection here!</p>
+			<p>Some text about our collection</p>
+		</div>
+
+
+		<!-- About Us -->
+		<div class="w3-container" id="about" style="margin-top: 75px">
+			<h1 class="w3-xxxlarge w3-text-red">
+				<b>about us.</b>
+			</h1>
+			<hr style="width: 50px; border: 5px solid red" class="w3-round">
+			<p>
+				Here is some information about the Double Burst team. <br>You
+				can learn more at DoubleBurst.com
+			</p>
+		</div>
+
+		<!-- Contact -->
+		<div class="w3-container" id="contact" style="margin-top: 75px">
+			<h1 class="w3-xxxlarge w3-text-red">
+				<b>contact.</b>
+			</h1>
+			<hr style="width: 50px; border: 5px solid red" class="w3-round">
+			<p>
+				Do you have questions, or would like to give us feedback? <br>
+				We would love to hear from you!
+			</p>
+		</div>
+
+
+		<!-- End page content -->
+	</div>
+
+	<!-- W3.CSS Container -->
+	<div class="w3-light-grey w3-container w3-padding-32"
+		style="margin-top: 75px; padding-right: 58px">
+		<p class="w3-right">
+			Powered by <a href="https://www.w3schools.com/w3css/default.asp"
+				title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+		</p>
+	</div>
+
+	<script>
+		// Script to open and close sidebar
+		function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+			document.getElementById("myOverlay").style.display = "block";
+		}
+
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+			document.getElementById("myOverlay").style.display = "none";
+		}
+
+		// Modal Image Gallery
+		function onClick(element) {
+			document.getElementById("img01").src = element.src;
+			document.getElementById("modal01").style.display = "block";
+			var captionText = document.getElementById("caption");
+			captionText.innerHTML = element.alt;
+		}
+	</script>
+</body>
+
+</html>
