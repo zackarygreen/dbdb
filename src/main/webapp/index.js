@@ -9,6 +9,6 @@ angular.module('dbdb', [])
     	age: '56'
     },{
     	name:'Zack',
-    	age: '32'
+    	age: '34'
     }]
   });
